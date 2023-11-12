@@ -1,17 +1,15 @@
 import { Formik, Field, Form } from 'formik';
 
-export const Searchbar = () => {
+export const Searchbar = ({ onSubmit }) => {
   return (
     <header>
       <Formik
         initialValues={{
-          firstName: '',
-          lastName: '',
-          email: '',
+          input: '',
         }}
-        onSubmit={async values => {
-          await new Promise(r => setTimeout(r, 500));
-          alert(JSON.stringify(values, null, 2));
+        onSubmit={(value, actions) => {
+          onSubmit(value);
+          actions.resetForm();
         }}
       >
         <Form>
@@ -21,9 +19,9 @@ export const Searchbar = () => {
 
           <Field
             name="input"
-            autocomplete="off"
+            autoComplete="off"
             type="text"
-            autofocus
+            autoFocus
             placeholder="Search images and photos"
           />
         </Form>
