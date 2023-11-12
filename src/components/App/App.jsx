@@ -62,8 +62,6 @@ export class App extends Component {
   };
 
   render() {
-    console.log(this.state);
-
     return (
       <Wrapper>
         <Searchbar onSubmit={this.handleSubmit} />
