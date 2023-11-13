@@ -25,9 +25,8 @@ export class ImageGalleryItem extends Component {
     this.setState({ isModalOpen: true });
   };
   closeModal = () => {
-    console.log(this.state.isModalOpen);
-
-    return this.setState({ isModalOpen: false });
+    this.setState({ isModalOpen: false });
+    //console.log(this.state.isModalOpen);
   };
 
   render() {
