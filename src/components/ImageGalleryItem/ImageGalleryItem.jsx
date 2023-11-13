@@ -31,7 +31,7 @@ export class ImageGalleryItem extends Component {
   };
 
   render() {
-    const { smallImg, bigImg, alt } = this.props;
+    const { smallImg, alt } = this.props;
     // const isModalOpen = this.state.isModalOpen;
     return (
       <ImgItem onClick={this.openModal}>
