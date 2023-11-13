@@ -26,25 +26,24 @@ export class ImageGalleryItem extends Component {
   };
   closeModal = () => {
     this.setState({ isModalOpen: false });
-    //console.log(this.state.isModalOpen);
   };
 
   render() {
-    const { smallImg, alt } = this.props;
-    // const isModalOpen = this.state.isModalOpen;
+    const { smallImg, bigImg, alt } = this.props;
     return (
-      <ImgItem onClick={this.openModal}>
-        <Img src={smallImg} alt={alt} />
-
+      <>
+        <ImgItem onClick={this.openModal}>
+          <Img src={smallImg} alt={alt} />
+        </ImgItem>
         <Modal
           isOpen={this.state.isModalOpen}
           onRequestClose={this.closeModal}
           style={customStyles}
           contentLabel="Example Modal"
         >
-          <button onClick={this.closeModal}>close</button>
+          <img src={bigImg} alt={alt} />
         </Modal>
-      </ImgItem>
+      </>
     );
   }
 }

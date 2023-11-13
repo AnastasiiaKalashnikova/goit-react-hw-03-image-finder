@@ -36,7 +36,8 @@ export class App extends Component {
         // отримує зображення
         const foundImgs = await fetchImg(
           this.state.inputValue,
-          this.state.page
+          this.state.page,
+          this.state
         );
         // console.log(foundImgs.hits);
         //записали в стейт зображення
